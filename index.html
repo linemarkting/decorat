@@ -4,10 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>صباغ الكويت - خدمات دهان وديكور</title>
-    <!-- Font Awesome للأيقونات -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
-        /* === إعدادات عامة === */
         * {
             margin: 0;
             padding: 0;
@@ -28,11 +27,11 @@
             text-decoration: none;
         }
 
-        /* === شريط الهاتف العلوي === */
+        /* شريط الهاتف العلوي */
         .top-bar {
             background: #0b2b40;
             color: #fff;
-            padding: 10px 0;
+            padding: 12px 0;
             text-align: center;
             font-size: 1.1rem;
         }
@@ -44,13 +43,13 @@
             color: #fff;
             font-weight: bold;
             font-size: 1.3rem;
-            margin-right: 5px;
+            margin: 0 5px;
         }
         .top-bar a:hover {
             color: #ffc107;
         }
 
-        /* === الهيدر === */
+        /* الهيدر */
         header {
             background: #ffffff;
             box-shadow: 0 2px 10px rgba(0,0,0,0.08);
@@ -93,7 +92,7 @@
             color: #fff !important;
         }
 
-        /* === البانر الرئيسي === */
+        /* البانر الرئيسي */
         .hero {
             background: linear-gradient(135deg, #0b2b40 0%, #1a4b66 100%);
             color: #fff;
@@ -127,7 +126,6 @@
             margin-left: 10px;
         }
 
-        /* === الأقسام === */
         section {
             padding: 60px 0;
         }
@@ -141,7 +139,7 @@
             color: #d4a017;
         }
 
-        /* === بطاقات الخدمات === */
+        /* بطاقات الخدمات */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -155,6 +153,7 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.06);
             transition: 0.3s;
             border-bottom: 4px solid #d4a017;
+            cursor: pointer;
         }
         .service-card:hover {
             transform: translateY(-8px);
@@ -169,8 +168,21 @@
             font-size: 1.3rem;
             margin-bottom: 8px;
         }
+        .service-card a {
+            display: block;
+            margin-top: 12px;
+            background: #0b2b40;
+            color: #fff;
+            padding: 10px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .service-card a:hover {
+            background: #d4a017;
+        }
 
-        /* === المناطق === */
+        /* المناطق */
         .areas-grid {
             display: flex;
             flex-wrap: wrap;
@@ -186,42 +198,51 @@
             border: 1px solid #e0e0e0;
         }
 
-        /* === نموذج الاتصال === */
-        .contact-form {
-            max-width: 600px;
-            margin: auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-        }
-        .contact-form input,
-        .contact-form textarea,
-        .contact-form select {
-            width: 100%;
-            padding: 14px;
-            margin-bottom: 18px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            font-size: 1rem;
-        }
-        .contact-form button {
+        /* قسم عرض السعر (بدون فورم) */
+        .cta-section {
             background: #0b2b40;
             color: #fff;
-            padding: 16px;
-            border: none;
-            border-radius: 50px;
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 20px;
+        }
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        .cta-section p {
             font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .cta-section .btn-cta {
+            background: #ffc107;
+            color: #0b2b40;
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-size: 1.4rem;
             font-weight: bold;
-            width: 100%;
-            cursor: pointer;
+            display: inline-block;
             transition: 0.3s;
         }
-        .contact-form button:hover {
-            background: #d4a017;
+        .cta-section .btn-cta:hover {
+            background: #ffd84d;
+            transform: scale(1.05);
+        }
+        .cta-section .btn-cta i {
+            margin-left: 10px;
         }
 
-        /* === الفوتر === */
+        .phone-big {
+            font-size: 2rem;
+            color: #ffc107;
+            font-weight: bold;
+        }
+        .phone-big a {
+            color: #ffc107;
+        }
+
+        /* الفوتر */
         footer {
             background: #0b2b40;
             color: #ccc;
@@ -237,7 +258,6 @@
             color: #ffc107;
         }
 
-        /* === تنسيق الجوال === */
         @media (max-width: 768px) {
             .nav a {
                 margin-right: 12px;
@@ -255,6 +275,9 @@
             }
             .top-bar a {
                 font-size: 1.1rem;
+            }
+            .cta-section h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -279,7 +302,7 @@
                 <a href="#services">الخدمات</a>
                 <a href="#areas">المناطق</a>
                 <a href="#gallery">أعمالنا</a>
-                <a href="#contact" class="btn-header">اطلب عرض سعر</a>
+                <a href="#contact" class="btn-header">اتصل بنا</a>
             </div>
         </div>
     </header>
@@ -289,8 +312,8 @@
         <div class="container">
             <h2>دهان وديكورات فاخرة في الكويت</h2>
             <p>جودة تدوم لسنوات – نستخدم أفضل أنواع الدهانات الإيطالية والعالمية</p>
-            <a href="#contact" class="btn-hero">
-                <i class="fas fa-calculator"></i> احصل على عرض سعر مجاني
+            <a href="tel:50888038" class="btn-hero">
+                <i class="fas fa-phone-alt"></i> اتصل الآن واحصل على عرض سعر مجاني
             </a>
             <br><br>
             <p style="font-size:1.2rem;">
@@ -309,31 +332,37 @@
                     <i class="fas fa-home"></i>
                     <h3>دهان داخلي</h3>
                     <p>شقق، غرف، مطابخ وحمامات بأحدث الألوان</p>
+                    <a href="tel:50888038"><i class="fas fa-phone-alt"></i> احصل على عرض سعر</a>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-building"></i>
                     <h3>دهان خارجي</h3>
                     <p>واجهات فلل وعماير بدهانات مقاومة للطقس</p>
+                    <a href="tel:50888038"><i class="fas fa-phone-alt"></i> احصل على عرض سعر</a>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-palette"></i>
                     <h3>دهانات ديكورية</h3>
                     <p>رخامية، إسمنتية، إيطالية فاخرة</p>
+                    <a href="tel:50888038"><i class="fas fa-phone-alt"></i> احصل على عرض سعر</a>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-wallpaper"></i>
                     <h3>ورق جدران</h3>
                     <p>تشكيلة واسعة من التصاميم العصرية</p>
+                    <a href="tel:50888038"><i class="fas fa-phone-alt"></i> احصل على عرض سعر</a>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-tree"></i>
                     <h3>دهان أخشاب</h3>
                     <p>أبواب، شبابيك وأثاث خشبي بجودة عالية</p>
+                    <a href="tel:50888038"><i class="fas fa-phone-alt"></i> احصل على عرض سعر</a>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-water"></i>
                     <h3>معالجة الرطوبة</h3>
                     <p>معالجة التشققات والعزل قبل الدهان</p>
+                    <a href="tel:50888038"><i class="fas fa-phone-alt"></i> احصل على عرض سعر</a>
                 </div>
             </div>
         </div>
@@ -362,7 +391,7 @@
         </div>
     </section>
 
-    <!-- ===== معرض مصغر (أعمالنا) ===== -->
+    <!-- ===== معرض أعمالنا ===== -->
     <section id="gallery">
         <div class="container">
             <h2 class="section-title">أعمالنا <span>السابقة</span></h2>
@@ -381,31 +410,24 @@
         </div>
     </section>
 
-    <!-- ===== نموذج الاتصال ===== -->
+    <!-- ===== قسم التواصل (بدون فورم) ===== -->
     <section id="contact" style="background:#f0f2f5;">
         <div class="container">
-            <h2 class="section-title">اطلب <span>عرض سعر مجاني</span></h2>
-            <div class="contact-form">
-                <form action="#" method="POST">
-                    <input type="text" placeholder="الاسم الكامل" required />
-                    <input type="tel" placeholder="رقم الهاتف" required />
-                    <select required>
-                        <option value="">نوع الخدمة</option>
-                        <option>دهان داخلي</option>
-                        <option>دهان خارجي</option>
-                        <option>دهانات ديكورية</option>
-                        <option>ورق جدران</option>
-                        <option>دهان أخشاب</option>
-                        <option>معالجة رطوبة</option>
-                    </select>
-                    <textarea rows="4" placeholder="تفاصيل إضافية (المساحة، عدد الغرف، الملاحظات...)"></textarea>
-                    <button type="submit"><i class="fas fa-paper-plane"></i> أرسل الطلب</button>
-                </form>
-                <p style="text-align:center;margin-top:20px;font-size:1.2rem;">
-                    أو تواصل مباشرة عبر واتساب:
-                    <a href="https://wa.me/96550888038" target="_blank" style="color:#25D366;font-weight:bold;font-size:1.5rem;">
-                        <i class="fab fa-whatsapp"></i> 50888038
+            <div class="cta-section">
+                <h2><i class="fas fa-phone-alt" style="color:#ffc107;"></i> تواصل معنا الآن</h2>
+                <p>احصل على عرض سعر مجاني – نأتيك أينما كنت في الكويت</p>
+                <a href="tel:50888038" class="btn-cta">
+                    <i class="fas fa-phone-alt"></i> اتصل الآن: 50888038
+                </a>
+                <br><br>
+                <p style="font-size:1.3rem;">
+                    أو تواصل عبر واتساب:
+                    <a href="https://wa.me/96550888038" target="_blank" style="color:#25D366;font-weight:bold;font-size:1.8rem;">
+                        <i class="fab fa-whatsapp"></i> واتساب
                     </a>
+                </p>
+                <p style="margin-top:15px;font-size:1.5rem;">
+                    <i class="fas fa-clock"></i> متوفرون 24 ساعة طوال أيام الأسبوع
                 </p>
             </div>
         </div>
