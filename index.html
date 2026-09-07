@@ -6,15 +6,25 @@
     <title>صباغ الكويت - خدمات دهان وديكور</title>
     
     <!-- ===== Google Tag Manager (gtag.js) ===== -->
+    <!-- Google Ads -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16694048532"></script>
+    
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C26X8JF6EX"></script>
+    
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
+
+        // Google Ads
         gtag('config', 'AW-16694048532');
+        
+        // Google Analytics (GA4)
+        gtag('config', 'G-C26X8JF6EX');
     </script>
 
-    <!-- ===== دالة تتبع التحويل ===== -->
+    <!-- ===== دالة تتبع التحويل من Google Ads ===== -->
     <script>
         function gtag_report_conversion(url) {
             var callback = function () {
